@@ -1,4 +1,5 @@
 import math
+import random
 
 
 def merge(list, p, q, r):
@@ -34,4 +35,9 @@ def mergesort(list, p, r):
 
 
 if __name__ == "__main__":
-    print(mergesort([1, 6, 3, 2, 4, 7, 9, 5], 0, 7))
+    size = 100000
+    time = 0
+    list = []
+    for i in range(0, size):
+        list.append(random.randint(0, size))
+    print(mergesort(list, 0, size - 1))
