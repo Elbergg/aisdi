@@ -1,3 +1,6 @@
+import random
+
+
 def insertion_sort(list):
     l = len(list)
     for i in range(1, l):
@@ -10,4 +13,9 @@ def insertion_sort(list):
 
 
 if __name__ == "__main__":
-    print(insertion_sort([3, 6, 2, 8, 5, 1]))
+    size = 30000
+    time = 0
+    list = []
+    for i in range(0, size):
+        list.append(random.randint(0, size))
+    print(insertion_sort(list))
