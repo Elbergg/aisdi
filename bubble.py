@@ -4,8 +4,9 @@ from time import perf_counter
 
 def bubblesort(list):
     start = perf_counter()
-    for n in range(len(list) - 1):
-        for i in range(len(list) - 1):
+    l = len(list)
+    for n in range(l - 1):
+        for i in range(l - 1):
             if list[i] > list[i + 1]:
                 list[i], list[i + 1] = list[i + 1], list[i]
     end = perf_counter()
@@ -18,8 +19,5 @@ if __name__ == "__main__":
     time = 0
     list = []
     for i in range(0, size):
-        list.append(random.randint(0, 30000))
-    sorted_list = bubblesort(list)
+        list.append(random.randint(0, size))
     print(bubblesort(list))
-    time += list[1]
-    print(f"Average calc time: {time/10}")
