@@ -1,5 +1,7 @@
 import math
 import random
+import time
+import copy
 
 
 def merge(list, p, q, r):
@@ -35,9 +37,16 @@ def mergesort(list, p, r):
 
 
 if __name__ == "__main__":
-    size = 100000
-    time = 0
+    size = 1000000
     list = []
     for i in range(0, size):
         list.append(random.randint(0, size))
-    print(mergesort(list, 0, size - 1))
+    second_list = copy.copy(list)
+    start = time.time()
+    mergesort(list, 0, size - 1)
+    end = time.time()
+    print(end - start)
+    start2 = time.time()
+    second_list = sorted(second_list)
+    end2 = time.time()
+    print(end2 - start2)
